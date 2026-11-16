@@ -1,1 +1,0 @@
-# karpaty-trails_5_practical
