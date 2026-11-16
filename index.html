@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Карпатські маршрути — SPA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Карпатські маршрути</h1>
+    <div class="state-monitor" aria-live="off">
+      <span class="state-label">Час сесії</span>
+      <output id="session-timer" class="timer">00:00:00</output>
+    </div>
+    <nav class="nav" id="main-nav" aria-label="Головна навігація">
+      <a href="#catalog" class="nav__link">Каталог</a>
+      <a href="#details" class="nav__link">Спорядження</a>
+      <a href="#feedback" class="nav__link">Зворотний зв’язок</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="catalog" class="view">
+      <h2>Каталог маршрутів</h2>
+      <p class="lead">Добірка піших маршрутів Карпат: від прогулянки до озера до сходження на найвищу вершину України.</p>
+      <p class="stats">6 маршрутів · від 5 до 28 км · від пів дня до двох днів</p>
+      <ul class="routes">
+        <li><strong>Говерла</strong><span>Заросляк — вершина (2061 м) · 1 день · 14 км · середня складність</span></li>
+        <li><strong>Петрос</strong><span>Заросляк — Петрос (2020 м) · 1 день · 16 км · середня складність</span></li>
+        <li><strong>Хомʼяк і Ґорґани</strong><span>Яремче — Ґорґани · 2 дні · 28 км · висока складність</span></li>
+        <li><strong>Озеро Синевир</strong><span>Колочава — озеро · пів дня · 5 км · низька складність</span></li>
+        <li><strong>Дземброня</strong><span>Ворохта — Дземброня (1877 м) · 1 день · 18 км · середня складність</span></li>
+        <li><strong>Джурджі</strong><span>Яремче — водоспад Пробій — Джурджі · пів дня · 8 км · низька складність</span></li>
+      </ul>
+    </section>
+
+    <section id="details" class="view is-hidden">
+      <h2>Спорядження</h2>
+      <p class="lead">Відмічайте, що вже поклали в рюкзак.</p>
+      <p class="progress" id="gear-progress">Зібрано 0 з 8</p>
+      <ul class="gear" id="gear-list">
+        <li><label><input type="checkbox"> Взуття з протекторною підошвою</label></li>
+        <li><label><input type="checkbox"> Дощовик</label></li>
+        <li><label><input type="checkbox"> Тепла кофта</label></li>
+        <li><label><input type="checkbox"> Вода, не менше 2 літрів</label></li>
+        <li><label><input type="checkbox"> Їжа та перекус</label></li>
+        <li><label><input type="checkbox"> Павербанк і офлайн-мапа</label></li>
+        <li><label><input type="checkbox"> Аптечка</label></li>
+        <li><label><input type="checkbox"> Головний убір і сонцезахисний крем</label></li>
+      </ul>
+    </section>
+
+    <section id="feedback" class="view is-hidden">
+      <h2>Зворотний зв’язок</h2>
+      <p class="lead">Розкажіть, який маршрут ви пройшли або який хочете додати до каталогу.</p>
+      <form id="feedback-form" novalidate>
+        <label for="name">Імʼя</label>
+        <input id="name" name="name" type="text" required>
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Надіслати</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+      <h3>Відгуки</h3>
+      <ul id="reviews" class="reviews"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">Практична робота № 5 · MPA та SPA</footer>
+  <script src="app.js"></script>
+</body>
+</html>
